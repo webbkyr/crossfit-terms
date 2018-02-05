@@ -9,8 +9,8 @@ const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
-        const {username, password, firstName, lastName} = values;
-        const user = {username, password, firstName, lastName};
+        const {username, password} = values;
+        const user = {username, password};
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
@@ -23,10 +23,10 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="firstName">First name | Nombre Primero</label>
-                <Field component={Input} type="text" name="firstName" />
-                <label htmlFor="lastName">Last name | Nombre Ultimo</label>
-                <Field component={Input} type="text" name="lastName" />
+                {/* <label htmlFor="firstName">First name | Nombre Primero</label>
+                <Field component={Input} type="text" name="firstName" /> */}
+                {/* <label htmlFor="lastName">Last name | Apellido</label>
+                <Field component={Input} type="text" name="lastName" /> */}
                 <label htmlFor="username">Username | Usuario</label>
                 <Field
                     component={Input}
@@ -34,14 +34,14 @@ export class RegistrationForm extends React.Component {
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                <label htmlFor="password">Password | Contrasena</label>
+                <label htmlFor="password">Password | Contraseña</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
                 />
-                <label htmlFor="passwordConfirm">Confirm password | Confirmar contrasena</label>
+                <label htmlFor="passwordConfirm">Confirm password | Confirmar contraseña</label>
                 <Field
                     component={Input}
                     type="password"
