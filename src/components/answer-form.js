@@ -20,7 +20,6 @@ export class AnswerForm extends React.Component {
                 response: target.value
             })
         }
-        console.log(this.state.response);
     }
 
     onSubmit(event){
