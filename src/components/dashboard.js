@@ -16,7 +16,7 @@ export class Dashboard extends React.Component {
     }
 
     startExercise(){
-        console.log('start exercise');
+        console.log('start exercise -- dispatch fetch questions');
     }
 
     render() {
