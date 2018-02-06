@@ -35,7 +35,7 @@ export const addResponse = (id, response) => (dispatch, getState) => {
         return res.json();
     })
     .then(data => {
-        console.log(data.message);
+        console.log(data);
         dispatch(addResponseSuccess(data.message))})
     .catch(err=> {
         dispatch(addResponseError(err))
