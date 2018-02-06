@@ -19,7 +19,7 @@ export const addResponseError = () => ({
 export const addResponse = (response) => dispatch => {
     dispatch(addResponseRequest());
     //double check endpoint when backend is complete
-    return fetch(`${API_BASE_URL}/user/responses`, {
+    return fetch(`${API_BASE_URL}/users/responses`, {
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: `POST`,
         body: JSON.stringify({
