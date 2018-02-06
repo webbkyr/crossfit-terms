@@ -11,10 +11,10 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchProtectedData());
     }
 
-    // startExercise(event){
-    //     event.preventDefault();
-    //     console.log('start exercise -- dispatch fetch questions');
-    // }
+    startExercise(event){
+        event.preventDefault();
+        console.log('start exercise -- dispatch fetch questions');
+    }
 
     render() {
         return (
@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div>
-                <button>Start exercise!</button>
+                <button onClick={(e) => this.startExercise(e)}>Start exercise!</button>
             </div>
         );
     }
