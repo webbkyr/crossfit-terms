@@ -10,7 +10,7 @@ const initialState = {
     error: null
 }
 
-export const responseReducer = (state = initialState, action) => {
+export default function responseReducer(state = initialState, action){
     if(action.type === ADD_RESPONSE_REQUEST) {
         return Object.assign({}, state, {
             loading: true,
