@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+import Board from './board';
 
 export class Dashboard extends React.Component {
 
@@ -28,6 +29,7 @@ export class Dashboard extends React.Component {
                     Protected data: {this.props.protectedData}
                 </div>
                 <button onClick={e => this.startExercise(e)}>Start exercise!</button>
+                <Board />
             </div>
         );
     }
