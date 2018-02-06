@@ -9,11 +9,13 @@ export const fetchQuestionRequest = () => {
 }
 
 export const FETCH_QUESTION_SUCCESS = "FETCH_QUESTION_SUCCESS";
-export const fetchQuestionSuccess = (currWord) => {
+export const fetchQuestionSuccess = (currWord, id, answer) => {
   return {
     type: FETCH_QUESTION_SUCCESS,
     loading: false,
-    currWord
+    currWord,
+    id,
+    answer
   }
 }
 

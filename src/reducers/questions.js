@@ -3,7 +3,9 @@ import * as actions from '../actions/questions';
 const initialState = {
   loading: false,
   currWord: '',
-  error: null
+  error: null,
+  id: '',
+  answer: ''
 }
 
 export default function getQuestion(state=initialState, action){
@@ -15,13 +17,14 @@ export default function getQuestion(state=initialState, action){
   else if(action.type === actions.FETCH_QUESTION_SUCCESS) {
     return Object.assign({}, state, {
       loading: false,
-      currWord: action.currWord
+      currWord: action.currWord,
+      id: action.id
     })
   }
   else if(action.type === actions.FETCH_QUESTION_ERROR) {
     return Object.assign({}, state, {
       loading: false,
-      error: action.erro
+      error: action.error
     })
   }
   return state;

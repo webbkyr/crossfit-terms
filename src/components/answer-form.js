@@ -24,7 +24,7 @@ export class AnswerForm extends React.Component {
 
     onSubmit(event){
         event.preventDefault();
-        this.props.dispatch(addResponse(this.state.response));
+        this.props.dispatch(addResponse(this.props.id, this.state.response));
     }
 
     //add form render and logic to handle the input / submission
@@ -56,8 +56,8 @@ export class AnswerForm extends React.Component {
     }
 }
 
-// const mapStateToProps = state => ({
-//     response: state.response
-// });
+const mapStateToProps = state => ({
+    id: state.id
+});
 
-export default connect()(AnswerForm);
+export default connect(mapStateToProps)(AnswerForm);
