@@ -57,7 +57,7 @@ export class AnswerForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    id: state.id
+    id: state.question.currWord._id
 });
 
 export default connect(mapStateToProps)(AnswerForm);

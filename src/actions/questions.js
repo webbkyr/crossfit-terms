@@ -9,13 +9,11 @@ export const fetchQuestionRequest = () => {
 }
 
 export const FETCH_QUESTION_SUCCESS = "FETCH_QUESTION_SUCCESS";
-export const fetchQuestionSuccess = (currWord, id, answer) => {
+export const fetchQuestionSuccess = (currWord) => {
   return {
     type: FETCH_QUESTION_SUCCESS,
     loading: false,
-    currWord,
-    id,
-    answer
+    currWord
   }
 }
 
@@ -44,6 +42,7 @@ export const fetchQuestions = () => (dispatch, getState) => {
   })
   .then( currWord => {
     dispatch(fetchQuestionSuccess(currWord));
+    console.log(currWord);
   })
   .catch(err => {
     dispatch(fetchQuestionError(err))
