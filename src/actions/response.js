@@ -16,11 +16,12 @@ export const addResponseError = () => ({
     type: ADD_RESPONSE_ERROR
 })
 
-export const addResponse = (response) => dispatch => {
+export const addResponse = (response) => (dispatch, getState) => {
     dispatch(addResponseRequest());
+    const authToken = getState().auth.authToken;
     //double check endpoint when backend is complete
     return fetch(`${API_BASE_URL}/users/responses`, {
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        headers: { 'Authorization': `Bearer ${authToken}`, 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: `POST`,
         body: JSON.stringify({
             response
@@ -33,9 +34,8 @@ export const addResponse = (response) => dispatch => {
         return res.json();
     })
     .then(data => {
-        dispatch(addResponseSuccess(data.response))
-        .catch(err=>
+        dispatch(addResponseSuccess(data.response))})
+    .catch(err=> {
         dispatch(addResponseError(err))
-        )
-    })
+        })
 }
