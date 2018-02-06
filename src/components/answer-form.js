@@ -20,13 +20,12 @@ export class AnswerForm extends React.Component {
                 response: target.value
             })
         }
-        // console.log(this.state.response);
+        console.log(this.state.response);
     }
 
     onSubmit(event){
         event.preventDefault();
-            // this.props.dispatch(addResponse(this.props.response));
-            console.log(this.state.response);
+        this.props.dispatch(addResponse(this.props.response));
     }
 
     //add form render and logic to handle the input / submission
