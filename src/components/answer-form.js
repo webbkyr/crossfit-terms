@@ -35,7 +35,7 @@ export class AnswerForm extends React.Component {
         if (view === 'question') {
             button =
                 <div>
-                    <button type="submit" name="submit" id="submitResponse" className="button">
+                    <button type="submit" name="submit" id="addResponse" className="button">
                         Submit Answer
                     </button>
                 </div>

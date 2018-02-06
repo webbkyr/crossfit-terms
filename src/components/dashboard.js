@@ -3,9 +3,20 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 
+//state, button, onClick and startExercise functions added to test answer form componenet
+
 export class Dashboard extends React.Component {
+
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
+    }
+
+    onClick(event){
+        event.preventDefault;
+    }
+
+    startExercise(){
+        console.log('start exercise');
     }
 
     render() {
@@ -18,6 +29,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div>
+                <button onClick={e => this.startExercise(e)}>Start exercise!</button>
             </div>
         );
     }
