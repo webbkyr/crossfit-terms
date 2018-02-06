@@ -7,7 +7,6 @@ import Board from './board';
 export class Dashboard extends React.Component {
 
     componentDidMount() {
-        console.log('mounted');
         this.props.dispatch(fetchProtectedData());
     }
 
@@ -27,6 +26,7 @@ export class Dashboard extends React.Component {
                     Protected data: {this.props.protectedData}
                 </div>
                 <button onClick={(e) => this.startExercise(e)}>Start exercise!</button>
+                <Board />
             </div>
         );
     }
@@ -34,7 +34,6 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
-    console.log(state);
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.username}`,

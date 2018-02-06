@@ -4,7 +4,7 @@ import { fetchQuestions } from '../actions/questions';
 
 export class Questions extends React.Component{
   componentDidMount(){
-    this.props.dispatch(fetchQuestions());  //need to write the action
+    this.props.dispatch(fetchQuestions());  
   }
 
   render(){
@@ -19,7 +19,7 @@ export class Questions extends React.Component{
 
 const mapStateToProps = (state, props) => {
   return {
-    question: state.questions.currWord
+    question: state.question.currWord.question
   }
 }
 

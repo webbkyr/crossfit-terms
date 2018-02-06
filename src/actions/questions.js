@@ -26,11 +26,15 @@ export const fetchQuestionError = (err) => {
   }
 }
 
-export const fetchQuestions = () => dispatch => {
+export const fetchQuestions = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   dispatch(fetchQuestionRequest());
-  fetch(`${API_BASE_URL}/questions`)
+  fetch(`${API_BASE_URL}/questions`, {
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    }
+  })
   .then( res => {
-    console.log(res);
     if(!res.ok) {
       console.log('There was an issue with the request');
     }
