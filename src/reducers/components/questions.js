@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchQuestions } from '../actions/questions';
 
-export default class Questions extends React.Component{
+export class Questions extends React.Component{
   componentDidMount(){
-    this.props.dispatch(fetchQuestion());  //need to write the action
+    this.props.dispatch(fetchQuestions());  //need to write the action
   }
 
   render(){

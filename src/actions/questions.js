@@ -26,7 +26,7 @@ export const fetchQuestionError = (err) => {
   }
 }
 
-export const fetchQuestion = () => dispatch => {
+export const fetchQuestions = () => dispatch => {
   dispatch(fetchQuestionRequest());
   fetch(`${API_BASE_URL}/questions`)
   .then( res => {

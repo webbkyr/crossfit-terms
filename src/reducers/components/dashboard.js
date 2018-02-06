@@ -7,16 +7,14 @@ import Board from './board';
 export class Dashboard extends React.Component {
 
     componentDidMount() {
+        console.log('mounted');
         this.props.dispatch(fetchProtectedData());
     }
 
-    onClick(event){
-        event.preventDefault;
-    }
-
-    startExercise(){
-        console.log('start exercise -- dispatch fetch questions');
-    }
+    // startExercise(event){
+    //     event.preventDefault();
+    //     console.log('start exercise -- dispatch fetch questions');
+    // }
 
     render() {
         return (
@@ -28,8 +26,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div>
-                <button onClick={e => this.startExercise(e)}>Start exercise!</button>
-                <Board />
+                <button>Start exercise!</button>
             </div>
         );
     }
@@ -37,6 +34,7 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
+    console.log(state);
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.username}`,
