@@ -5,8 +5,8 @@ export const addResponseRequest = () => ({
     type: ADD_RESPONSE_REQUEST
 });
 
-export const ADD_RESPONSE_SUCCESSS = 'ADD_RESPONSE_SUCCESS';
-export const addResponseSuccess = () => ({
+export const ADD_RESPONSE_SUCCESS = 'ADD_RESPONSE_SUCCESS';
+export const addResponseSuccess = (response) => ({
     type: ADD_RESPONSE_SUCCESS,
     response
 });

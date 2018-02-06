@@ -7,47 +7,30 @@ export class AnswerForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            answer: this.props.answer,
-            view: this.props.view,
-            loading: this.props.loading
+            response: this.props.response
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
+    handleInputChange(event) {
+        const target = event.target;
+        if(target.name === 'textInput') {
+            this.setState({
+                response: target.value
+            })
+        }
+        // console.log(this.state.response);
+    }
+
     onSubmit(event){
         event.preventDefault();
-
-        if(this.props.view === 'question') {
-            this.props.dispatch(addResponse(this.props.response));
-            console.log(response);
-        }
-        else {
-            this.props.dispatch(nextQuestion(this.props.question));
-        }
+            // this.props.dispatch(addResponse(this.props.response));
+            console.log(this.state.response);
     }
 
     //add form render and logic to handle the input / submission
     render() {
-        const view = this.props.view;
-        let button = null;
-        
-        if (view === 'question') {
-            button =
-                <div>
-                    <button type="submit" name="submit" id="addResponse" className="button">
-                        Submit Answer
-                    </button>
-                </div>
-        }
-        else {
-            button =
-            <div>
-                <button type="submit" name="submit" id="nextQuestion" className="button">
-                    Next Question
-                </button>
-            </div>
-        }
 
         return (
             <form onSubmit={e => this.onSubmit(e)}>
@@ -65,7 +48,18 @@ export class AnswerForm extends React.Component {
                     >
                     </textarea>
                 </div>
+                <div>
+                    <button type="submit" name="submit" id="addResponse" className="button">
+                        Submit Answer
+                    </button>
+                </div>
             </form>
         )
     }
 }
+
+const mapStateToProps = state => ({
+    response: state.response
+});
+
+export default connect(mapStateToProps)(AnswerForm);

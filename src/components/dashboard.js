@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 
-//state, button, onClick and startExercise functions added to test answer form componenet
+//answer form imported for testing purposes
+import AnswerForm from './answer-form';
 
 export class Dashboard extends React.Component {
 
