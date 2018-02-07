@@ -20,7 +20,10 @@ export const addResponseError = () => ({
 export const UPDATE_NEW_RESPONSE = 'UPDATE_NEW_RESPONSE';
 export const updateNewResponse = (userResponse) => ({
     type: UPDATE_NEW_RESPONSE,
-    response: userResponse
+    response: userResponse,
+    loading: false,
+    view: 'feedback',
+    error: null
 })
 
 export const addResponse = (response) => (dispatch, getState) => {

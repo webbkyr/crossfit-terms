@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addResponse} from '../actions/response';
+import './answer-form.css';
 
 export class AnswerForm extends React.Component {
 
@@ -32,10 +33,7 @@ export class AnswerForm extends React.Component {
     render() {
 
         return (
-            <form onSubmit={e => this.onSubmit(e)}>
-                <div>
-                    <label>Please enter your response below</label>
-                </div>
+            <form className="answer-form" onSubmit={e => this.onSubmit(e)}>
                 <div>
                     <textarea
                     onChange={this.handleInputChange}
@@ -50,6 +48,11 @@ export class AnswerForm extends React.Component {
                 <div>
                     <button type="submit" name="submit" id="addResponse" className="button">
                         Submit Answer
+                    </button>
+                </div>
+                <div>
+                    <button type="submit" name="next" id="nextQuestion" className="button">
+                        Next Question
                     </button>
                 </div>
             </form>

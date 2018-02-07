@@ -8,24 +8,23 @@ import {
 const initialState = {
     response: '',
     loading: false,
-    error: null
+    error: null,
+    view: ''
 }
 
 export default function responseReducer(state = initialState, action){
     if(action.type === ADD_RESPONSE_REQUEST) {
         return Object.assign({}, state, {
-            loading: true,
-            error: null
+            loading: action.loading,
+            error: action.error
         })
     }
     else if(action.type === UPDATE_NEW_RESPONSE) {
-        console.log('reducer');
-        console.log(action);
         return Object.assign({}, state, {
-          loading: false,
-          response: action.response,
-          error: null,
-          view: 'feedback'
+        response: action.response,
+        loading: action.loading,
+        error: action.error,
+        view: action.view
         })
     }
     else if(action.type === ADD_RESPONSE_SUCCESS) {

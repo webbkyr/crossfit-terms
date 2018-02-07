@@ -8,17 +8,20 @@ export function Feedback(props){
       return null;
     }
     else {
-      if(props.correctAnswer === 'thank you'){
+      let isCorrect = false;
+      
+      if(props.correctAnswer.toLowerCase() === props.userAnswer.toLowerCase()){
+        isCorrect = true;
         return(
           <div className="feedback">
-            <h1 className="feedback-correct">I'm the correct feedback</h1>
+            <h1 className="feedback-correct">Yes, that's correct!</h1>
           </div>
         )
       }
       else{
         return(
           <div className="feedback">
-            <h1 className="feedback-wrong">I'm the wrong feedback</h1>
+            <h1 className="feedback-wrong">Sorry, that's incorrect!</h1>
           </div>
         )
       }
@@ -26,10 +29,10 @@ export function Feedback(props){
 }
 
 const mapStateToProps = (state, props) => {
-  console.log(state);
   return {
     correctAnswer: state.question.currWord.answer,
-    view: state.response.response.view
+    view: state.response.view,
+    userAnswer: state.response.response
   }
 }
 

@@ -5,8 +5,11 @@ import {Route, withRouter} from 'react-router-dom';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
+import Board from './board';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
+
+import './app.css';
 
 export class App extends React.Component {
     componentWillReceiveProps(nextProps) {
@@ -45,6 +48,7 @@ export class App extends React.Component {
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />
+                <Route exact path="/board" component={Board} />
             </div>
         );
     }

@@ -42,7 +42,6 @@ export const fetchQuestions = () => (dispatch, getState) => {
   })
   .then( currWord => {
     dispatch(fetchQuestionSuccess(currWord));
-    console.log(currWord);
   })
   .catch(err => {
     dispatch(fetchQuestionError(err))

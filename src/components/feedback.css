@@ -1,3 +1,11 @@
+.feedback {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 245px;
+}
+
+
 .feedback-correct {
   color: green;
 }
@@ -5,3 +13,4 @@
 .feedback-wrong {
   color: red;
 }
+

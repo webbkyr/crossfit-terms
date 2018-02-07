@@ -1,0 +1,14 @@
+.board {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: gainsboro;
+  padding: 20px 25%;
+  margin-top: 20px;
+}
+
+.dashboard-link {
+  position: absolute;
+  top: 350px;
+
+}
