@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 import './feedback.css';
 
 export function Feedback(props){
+    {console.log(props)}
     if(props.view !== 'feedback'){
       return null;
     }
     else {
       let isCorrect = false;
       
-      if(props.correctAnswer.toLowerCase() === props.userAnswer.toLowerCase()){
+      if(props.correctAnswer.toLowerCase().trim() === props.userAnswer.toLowerCase().trim()){
         isCorrect = true;
         return(
           <div className="feedback">
@@ -29,8 +30,9 @@ export function Feedback(props){
 }
 
 const mapStateToProps = (state, props) => {
+  console.log(state);
   return {
-    correctAnswer: state.question.currWord.answer,
+    correctAnswer: state.question.answer,
     view: state.response.view,
     userAnswer: state.response.response
   }

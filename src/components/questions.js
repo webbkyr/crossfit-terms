@@ -21,7 +21,7 @@ export class Questions extends React.Component{
 
 const mapStateToProps = (state, props) => {
   return {
-    question: state.question.currWord.question
+    question: state.question.currWord
   }
 }
 

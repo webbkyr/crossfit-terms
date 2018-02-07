@@ -13,7 +13,8 @@ export const fetchQuestionSuccess = (currWord) => {
   return {
     type: FETCH_QUESTION_SUCCESS,
     loading: false,
-    currWord
+    currWord: currWord.word,
+    answer: currWord.answer
   }
 }
 
@@ -41,6 +42,7 @@ export const fetchQuestions = () => (dispatch, getState) => {
     return res.json();
   })
   .then( currWord => {
+    console.log('currWord',currWord);
     dispatch(fetchQuestionSuccess(currWord));
   })
   .catch(err => {
