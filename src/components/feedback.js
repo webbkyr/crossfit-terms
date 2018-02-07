@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './feedback.css';
 
 export function Feedback(props){
-    if(props.correctAnswer === undefined){
+    if(props.view !== 'feedback'){
       return null;
     }
     else {
@@ -28,7 +28,8 @@ export function Feedback(props){
 const mapStateToProps = (state, props) => {
   console.log(state);
   return {
-    correctAnswer: state.question.currWord.answer
+    correctAnswer: state.question.currWord.answer,
+    view: state.response.response.view
   }
 }
 

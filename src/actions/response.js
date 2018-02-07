@@ -16,15 +16,26 @@ export const addResponseError = () => ({
     type: ADD_RESPONSE_ERROR
 })
 
+export const UPDATE_NEW_RESPONSE = 'UPDATE_NEW_RESPONSE';
+export const updateNewResponse = (userResponse) => ({
+    type: UPDATE_NEW_RESPONSE,
+    response: userResponse
+})
+
 export const addResponse = (response) => (dispatch, getState) => {
+    dispatch(updateNewResponse(response));
     dispatch(addResponseRequest());
     const authToken = getState().auth.authToken;
+    const uid = getState().auth.currentUser.id;
+    const question = getState().question.currWord.question;
     //double check endpoint when backend is complete
     return fetch(`${API_BASE_URL}/users/responses`, {
         headers: { 'Authorization': `Bearer ${authToken}`, 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: `POST`,
         body: JSON.stringify({
-            response
+            response,
+            uid,
+            question
         })
     })
     .then(res => {
@@ -34,7 +45,8 @@ export const addResponse = (response) => (dispatch, getState) => {
         return res.json();
     })
     .then(data => {
-        dispatch(addResponseSuccess(data.response))})
+        //dispatch(addResponseSuccess(data.response))
+    })
     .catch(err=> {
         dispatch(addResponseError(err))
         })
