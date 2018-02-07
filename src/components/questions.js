@@ -10,7 +10,7 @@ export class Questions extends React.Component{
   render(){
     return(
       <div className="questions">
-        <p>Type this word, in English, into the box to the right.</p>
+        <p>Type this Spanish word - in English - in the box to the right.</p>
         <h4>{this.props.question}</h4>
       </div>
     );

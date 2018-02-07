@@ -24,7 +24,8 @@ export class AnswerForm extends React.Component {
 
     onSubmit(event){
         event.preventDefault();
-        this.props.dispatch(addResponse(this.props.id, this.state.response));
+        const userResponse = event.target.textInput.value;
+        this.props.dispatch(addResponse(userResponse));
     }
 
     //add form render and logic to handle the input / submission
@@ -33,7 +34,7 @@ export class AnswerForm extends React.Component {
         return (
             <form onSubmit={e => this.onSubmit(e)}>
                 <div>
-                    <label html="textInput">Please enter your response below</label>
+                    <label>Please enter your response below</label>
                 </div>
                 <div>
                     <textarea
