@@ -18,17 +18,19 @@ export class AnswerForm extends React.Component {
     }
 
     handleInputChange(event) {
-        const target = event.target;
+        const target = event.target
         if(target.name === 'textInput') {
+            let res = target.value.toLowerCase().trim();
+            console.log(res);
             this.setState({
-                response: target.value
+                response: res
             })
         }
     }
 
     onSubmit(event){
         event.preventDefault();
-        const userResponse = event.target.textInput.value;
+        const userResponse = this.state.response;
         this.props.dispatch(addResponse(userResponse));
         this.props.dispatch(updateProgress(userResponse));
     }
