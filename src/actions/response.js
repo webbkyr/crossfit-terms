@@ -26,26 +26,16 @@ export const updateNewResponse = (userResponse) => ({
     error: null
 })
 
-// export const UPDATE_PROGRESS_REQUEST = 'UPDATE_PROGRESS_REQUEST';
-// export const updateProgressRequest = () => ({
-//     type: UPDATE_PROGRESS_REQUEST  
-// })
-
-// export const UPDATE_PROGRESS_SUCCESS = 'UPDATE_PROGRESS_SUCCESS';
-// export const updateProgressRequest = () => ({
-//     type: UPDATE_PROGRESS_SUCCESS,
-//     answer
-// })
-
-// export const UPDATE_PROGRESS_ERROR = 'UPDATE_PROGRESS_ERROR';
-// export const updateProgressError = () => ({
-//     type: UPDATE_PROGRESS_ERROR,
-// })
-
 export const INCREMENT_SCORE = 'INCREMENT_SCORE';
 export const incrementScore = (numCorrect, totalQuest) => ({
     type: INCREMENT_SCORE,
     numCorrect: numCorrect + 1,
+    totalQuest: totalQuest + 1
+})
+
+export const INCREMENT_TOTAL = 'INCREMENT_TOTAL';
+export const incrementTotal = (totalQuest) => ({
+    type: INCREMENT_TOTAL,
     totalQuest: totalQuest + 1
 })
 
@@ -84,13 +74,11 @@ export const addResponse = (response) => (dispatch, getState) => {
 export const updateProgress = (response) => (dispatch, getState) => {
     const corrAnswer = getState().question.answer;
     const numCorrect = getState().response.numCorrect;
-    console.log(numCorrect);
     const totalQuest = getState().response.totalQuest;
     if ( response === corrAnswer) {
-        dispatch(incrementScore());
-        console.log('correct: ', numCorrect);
+        dispatch(incrementScore(numCorrect, totalQuest));
     }
     else {
-        console.log('incorrect');
+        dispatch(incrementTotal(totalQuest));
     }
 }

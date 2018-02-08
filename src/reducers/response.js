@@ -3,10 +3,8 @@ import {
     ADD_RESPONSE_SUCCESS,
     ADD_RESPONSE_ERROR,
     UPDATE_NEW_RESPONSE,
-    INCREMENT_SCORE
-    // UPDATE_PROGRESS_REQUEST,
-    // UPDATE_PROGRESS_SUCCESS,
-    // UPDATE_PROGRESS_ERROR
+    INCREMENT_SCORE,
+    INCREMENT_TOTAL
 } from '../actions/response';
 
 const initialState = {
@@ -50,22 +48,10 @@ export default function responseReducer(state = initialState, action){
             totalQuest: action.totalQuest
         })
     }
-    // else if(action.type === UPDATE_PROGRESS_REQUEST) {
-    //     return Object.assign({}, state, {
-    //         loading: action.loading,
-    //         error: action.error
-    //     })
-    // }
-    // else if (action.type === UPDATE_PROGRESS_SUCCESS) {
-    //     return Object.assign({}, state, {
-    //         response: action.response
-    //     })
-    // }
-    // else if(action.type === UPDATE_PROGRESSE_ERROR_ERROR) {
-    //     return Object.assign({}, state, {
-    //         error: action.error,
-    //         loading: false
-    //     })
-    // }
+    else if(action.type === INCREMENT_TOTAL) {
+        return Object.assign({}, state, {
+            totalQuest: action.totalQuest
+        })
+    }
     return state;
 }

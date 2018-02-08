@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addResponse} from '../actions/response';
+import {updateProgress} from '../actions/response';
 import './answer-form.css';
-import {updateProgress} from '../actions/response' 
 
 export class AnswerForm extends React.Component {
 
@@ -28,6 +28,7 @@ export class AnswerForm extends React.Component {
         event.preventDefault();
         const userResponse = event.target.textInput.value;
         this.props.dispatch(addResponse(userResponse));
+        this.props.dispatch(updateProgress(userResponse));
     }
 
     //add form render and logic to handle the input / submission

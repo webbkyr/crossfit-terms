@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './progress.css';
-// import updateProgress from '../actions/response.js'
 
 export function Progress(props){
   return(
