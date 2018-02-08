@@ -8,10 +8,12 @@ import './board.css';
 
 export default function Board(){
   return(
-    <div className="board">
-      <Feedback />
-      <Questions />
-      <AnswerForm />
+    <div>
+      <div className="board">
+        <Feedback />
+        <Questions />
+        <AnswerForm />
+      </div>
       <Progress />
       <Link className="dashboard-link" to="/dashboard">Back to Dashboard</Link>
     </div>

@@ -42,6 +42,13 @@ export const updateNewResponse = (userResponse) => ({
 //     type: UPDATE_PROGRESS_ERROR,
 // })
 
+export const INCREMENT_SCORE = 'INCREMENT_SCORE';
+export const incrementScore = (numCorrect, totalQuest) => ({
+    type: INCREMENT_SCORE,
+    numCorrect: numCorrect + 1,
+    totalQuest: totalQuest + 1
+})
+
 export const addResponse = (response) => (dispatch, getState) => {
     dispatch(updateNewResponse(response));
     dispatch(addResponseRequest());
@@ -76,10 +83,14 @@ export const addResponse = (response) => (dispatch, getState) => {
 
 export const updateProgress = (response) => (dispatch, getState) => {
     const corrAnswer = getState().question.answer;
-    if ( response.toLowerCase().trim() === corrAnswer.toLowerCase().trim()) {
-        console.log(1);
+    const numCorrect = getState().response.numCorrect;
+    console.log(numCorrect);
+    const totalQuest = getState().response.totalQuest;
+    if ( response === corrAnswer) {
+        dispatch(incrementScore());
+        console.log('correct: ', numCorrect);
     }
     else {
-        console.log(0);
+        console.log('incorrect');
     }
 }

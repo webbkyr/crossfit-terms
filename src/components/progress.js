@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './progress.css';
-import updateProgress from '../actions/response.js'
+// import updateProgress from '../actions/response.js'
 
 export function Progress(props){
   return(
       <div className="progress">
-      <p>You have answered {props.numCorrect} out of {props.totalQuest} questions correctly.</p>
+      <p>You have answered <span class="score">{props.numCorrect}</span> out of <span class="score">{props.totalQuest}</span> questions correctly.</p>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import {
     ADD_RESPONSE_SUCCESS,
     ADD_RESPONSE_ERROR,
     UPDATE_NEW_RESPONSE,
+    INCREMENT_SCORE
     // UPDATE_PROGRESS_REQUEST,
     // UPDATE_PROGRESS_SUCCESS,
     // UPDATE_PROGRESS_ERROR
@@ -41,6 +42,12 @@ export default function responseReducer(state = initialState, action){
         return Object.assign({}, state, {
             error: action.error,
             loading: false
+        })
+    }
+    else if(action.type === INCREMENT_SCORE) {
+        return Object.assign({}, state, {
+            numCorrect: action.numCorrect,
+            totalQuest: action.totalQuest
         })
     }
     // else if(action.type === UPDATE_PROGRESS_REQUEST) {
