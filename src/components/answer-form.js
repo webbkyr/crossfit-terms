@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {addResponse} from '../actions/response';
 import {fetchNextQuestion} from '../actions/questions';
+import {updateProgress} from '../actions/response';
 import './answer-form.css';
 
 export class AnswerForm extends React.Component {
