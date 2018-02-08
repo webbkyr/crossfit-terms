@@ -3,12 +3,9 @@ import {
     ADD_RESPONSE_SUCCESS,
     ADD_RESPONSE_ERROR,
     UPDATE_NEW_RESPONSE,
-<<<<<<< HEAD
     INCREMENT_SCORE,
-    INCREMENT_TOTAL
-=======
+    INCREMENT_TOTAL,
     UPDATE_VIEW
->>>>>>> swap-buttons
 } from '../actions/response';
 
 const initialState = {
@@ -46,7 +43,6 @@ export default function responseReducer(state = initialState, action){
             loading: false
         })
     }
-<<<<<<< HEAD
     else if(action.type === INCREMENT_SCORE) {
         return Object.assign({}, state, {
             numCorrect: action.numCorrect,
@@ -56,11 +52,11 @@ export default function responseReducer(state = initialState, action){
     else if(action.type === INCREMENT_TOTAL) {
         return Object.assign({}, state, {
             totalQuest: action.totalQuest
-=======
+        })
+    }
     else if(action.type === UPDATE_VIEW) {
         return Object.assign({}, state, {
             view: action.view
->>>>>>> swap-buttons
         })
     }
     return state;

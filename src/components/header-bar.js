@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import { Redirect } from 'react-router-dom';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -17,6 +18,10 @@ export class HeaderBar extends React.Component {
                 <button onClick={() => this.logOut()}>Log out</button>
             );
         }
+        if (!this.props.loggedIn) {
+            return <Redirect to='/' />;
+        }
+
         return (
             <div className="header-bar">
                 <h1>Learn Spanish App | Aprender Espanol App</h1>

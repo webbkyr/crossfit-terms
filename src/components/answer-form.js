@@ -76,7 +76,7 @@ export class AnswerForm extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
+    //console.log(state);
     return {
         id: state.question.currWord._id,
         view: state.response.view
