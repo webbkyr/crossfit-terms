@@ -26,6 +26,12 @@ export const updateNewResponse = (userResponse) => ({
     error: null
 })
 
+export const UPDATE_VIEW = 'UPDATE_VIEW';
+export const updateView = () => ({
+    type: UPDATE_VIEW,
+    view: ''
+})
+
 export const addResponse = (response) => (dispatch, getState) => {
     dispatch(updateNewResponse(response));
     dispatch(addResponseRequest());

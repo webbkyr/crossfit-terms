@@ -30,7 +30,6 @@ export function Feedback(props){
 }
 
 const mapStateToProps = (state, props) => {
-  //console.log(state);
   return {
     correctAnswer: state.question.answer,
     view: state.response.view,

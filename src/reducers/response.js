@@ -2,7 +2,8 @@ import {
     ADD_RESPONSE_REQUEST,
     ADD_RESPONSE_SUCCESS,
     ADD_RESPONSE_ERROR,
-    UPDATE_NEW_RESPONSE
+    UPDATE_NEW_RESPONSE,
+    UPDATE_VIEW
 } from '../actions/response';
 
 const initialState = {
@@ -36,6 +37,11 @@ export default function responseReducer(state = initialState, action){
         return Object.assign({}, state, {
             error: action.error,
             loading: false
+        })
+    }
+    else if(action.type === UPDATE_VIEW) {
+        return Object.assign({}, state, {
+            view: action.view
         })
     }
     return state;
