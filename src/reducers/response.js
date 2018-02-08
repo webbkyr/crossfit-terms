@@ -2,14 +2,18 @@ import {
     ADD_RESPONSE_REQUEST,
     ADD_RESPONSE_SUCCESS,
     ADD_RESPONSE_ERROR,
-    UPDATE_NEW_RESPONSE
+    UPDATE_NEW_RESPONSE,
+    INCREMENT_SCORE,
+    INCREMENT_TOTAL
 } from '../actions/response';
 
 const initialState = {
     response: '',
     loading: false,
     error: null,
-    view: ''
+    view: '',
+    numCorrect: 0,
+    totalQuest: 0
 }
 
 export default function responseReducer(state = initialState, action){
@@ -36,6 +40,17 @@ export default function responseReducer(state = initialState, action){
         return Object.assign({}, state, {
             error: action.error,
             loading: false
+        })
+    }
+    else if(action.type === INCREMENT_SCORE) {
+        return Object.assign({}, state, {
+            numCorrect: action.numCorrect,
+            totalQuest: action.totalQuest
+        })
+    }
+    else if(action.type === INCREMENT_TOTAL) {
+        return Object.assign({}, state, {
+            totalQuest: action.totalQuest
         })
     }
     return state;

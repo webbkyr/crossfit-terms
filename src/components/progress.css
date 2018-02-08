@@ -1,0 +1,11 @@
+.progress {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 300px;
+}
+
+.score {
+    font-weight: bold;
+    color: #30336b;
+}

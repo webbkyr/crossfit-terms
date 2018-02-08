@@ -26,6 +26,19 @@ export const updateNewResponse = (userResponse) => ({
     error: null
 })
 
+export const INCREMENT_SCORE = 'INCREMENT_SCORE';
+export const incrementScore = (numCorrect, totalQuest) => ({
+    type: INCREMENT_SCORE,
+    numCorrect: numCorrect + 1,
+    totalQuest: totalQuest + 1
+})
+
+export const INCREMENT_TOTAL = 'INCREMENT_TOTAL';
+export const incrementTotal = (totalQuest) => ({
+    type: INCREMENT_TOTAL,
+    totalQuest: totalQuest + 1
+})
+
 export const addResponse = (response) => (dispatch, getState) => {
     dispatch(updateNewResponse(response));
     dispatch(addResponseRequest());
@@ -49,9 +62,21 @@ export const addResponse = (response) => (dispatch, getState) => {
         return res.json();
     })
     .then(data => {
-        //dispatch(addResponseSuccess(data.response))
+        console.log('here');
     })
     .catch(err=> {
         dispatch(addResponseError(err))
         })
+}
+
+export const updateProgress = (response) => (dispatch, getState) => {
+    const corrAnswer = getState().question.answer;
+    const numCorrect = getState().response.numCorrect;
+    const totalQuest = getState().response.totalQuest;
+    if ( response === corrAnswer) {
+        dispatch(incrementScore(numCorrect, totalQuest));
+    }
+    else {
+        dispatch(incrementTotal(totalQuest));
+    }
 }

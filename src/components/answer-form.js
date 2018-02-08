@@ -28,6 +28,7 @@ export class AnswerForm extends React.Component {
         event.preventDefault();
         const userResponse = event.target.textInput.value;
         this.props.dispatch(addResponse(userResponse));
+        this.props.dispatch(updateProgress(userResponse));
     }
 
     getNext(event) {
