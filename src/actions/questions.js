@@ -53,7 +53,7 @@ export const fetchQuestions = () => (dispatch, getState) => {
 export const fetchNextQuestion = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(fetchQuestionRequest());
-  fetch(`${API_BASE_URL}/questions/next`, {
+  fetch(`${API_BASE_URL}/next`, {
     headers: {
       Authorization: `Bearer ${authToken}`,
       Accept: 'application/json'
