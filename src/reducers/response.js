@@ -11,6 +11,8 @@ import {
 >>>>>>> swap-buttons
 } from '../actions/response';
 
+import { RESET_STATE } from '../actions/auth';
+
 const initialState = {
     response: '',
     loading: false,
@@ -61,6 +63,13 @@ export default function responseReducer(state = initialState, action){
         return Object.assign({}, state, {
             view: action.view
 >>>>>>> swap-buttons
+        })
+    }
+    else if(action.type === RESET_STATE) {
+        return Object.assign({}, state, {
+            response: action.response,
+            numCorrect: action.score,
+            totalQuest: action.total
         })
     }
     return state;
