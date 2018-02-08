@@ -64,6 +64,7 @@ export default function responseReducer(state = initialState, action){
     else if(action.type === RESET_STATE) {
         return Object.assign({}, state, {
             response: action.response,
+            view: action.view,
             numCorrect: action.score,
             totalQuest: action.total
         })
