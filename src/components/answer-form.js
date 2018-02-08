@@ -35,6 +35,7 @@ export class AnswerForm extends React.Component {
         event.preventDefault();
         this.props.dispatch(fetchNextQuestion());
         this.props.dispatch(updateView());
+        document.getElementById('textInput').value = '';
     }
 
     //add form render and logic to handle the input / submission
