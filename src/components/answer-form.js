@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addResponse} from '../actions/response';
+import {fetchNextQuestion} from '../actions/questions';
 import './answer-form.css';
 
 export class AnswerForm extends React.Component {
@@ -29,6 +30,11 @@ export class AnswerForm extends React.Component {
         this.props.dispatch(addResponse(userResponse));
     }
 
+    getNext(event) {
+        event.preventDefault();
+        this.props.dispatch(fetchNextQuestion());
+    }
+
     //add form render and logic to handle the input / submission
     render() {
 
@@ -51,7 +57,7 @@ export class AnswerForm extends React.Component {
                     </button>
                 </div>
                 <div>
-                    <button type="submit" name="next" id="nextQuestion" className="button">
+                    <button type="submit" name="next" id="nextQuestion" className="button" onClick={e => this.getNext(e)}>
                         Next Question
                     </button>
                 </div>

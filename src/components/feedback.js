@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './feedback.css';
 
 export function Feedback(props){
-    {console.log(props)}
+    //{console.log(props)}
     if(props.view !== 'feedback'){
       return null;
     }
@@ -30,7 +30,7 @@ export function Feedback(props){
 }
 
 const mapStateToProps = (state, props) => {
-  console.log(state);
+  //console.log(state);
   return {
     correctAnswer: state.question.answer,
     view: state.response.view,
