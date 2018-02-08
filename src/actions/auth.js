@@ -34,9 +34,10 @@ export const authError = error => ({
 });
 
 export const RESET_STATE = 'RESET_STATE';
-export const resetState = (response, score, total) => ({
+export const resetState = (response, view, score, total) => ({
     type: RESET_STATE,
     response: '',
+    view: '',
     score: 0,
     total: 0
 })
