@@ -42,13 +42,11 @@ export const incrementTotal = (totalQuest) => ({
 export const addResponse = (response) => (dispatch, getState) => {
     dispatch(updateNewResponse(response));
     dispatch(addResponseRequest());
-    const data = getState().auth;
-    const authToken = data.authToken;
-    const uid = data.currentUser.id;
-    const question = getState().question.currWord;
-    // const corrAnswer = getState().question.answer;
-    // console.log('data: ', question);
-    return fetch(`${API_BASE_URL}/users/responses`, {
+    const authToken = getState().auth.authToken;
+    const uid = getState().auth.currentUser.id;
+    const question = getState().question.currWord.question;
+    //double check endpoint when backend is complete
+    return fetch(`${API_BASE_URL}/responses`, {
         headers: { 'Authorization': `Bearer ${authToken}`, 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: `POST`,
         body: JSON.stringify({

@@ -14,7 +14,7 @@ export default function getQuestion(state=initialState, action){
     });
   }
   else if(action.type === actions.FETCH_QUESTION_SUCCESS) {
-    console.log(action);
+    //console.log(action);
     return Object.assign({}, state, {
       loading: false,
       currWord: action.currWord,
