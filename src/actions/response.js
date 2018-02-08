@@ -39,7 +39,7 @@ export const addResponse = (response) => (dispatch, getState) => {
     const uid = getState().auth.currentUser.id;
     const question = getState().question.currWord.question;
     //double check endpoint when backend is complete
-    return fetch(`${API_BASE_URL}/users/responses`, {
+    return fetch(`${API_BASE_URL}/responses`, {
         headers: { 'Authorization': `Bearer ${authToken}`, 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: `POST`,
         body: JSON.stringify({
