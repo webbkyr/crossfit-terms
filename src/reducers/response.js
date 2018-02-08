@@ -2,14 +2,19 @@ import {
     ADD_RESPONSE_REQUEST,
     ADD_RESPONSE_SUCCESS,
     ADD_RESPONSE_ERROR,
-    UPDATE_NEW_RESPONSE
+    UPDATE_NEW_RESPONSE,
+    // UPDATE_PROGRESS_REQUEST,
+    // UPDATE_PROGRESS_SUCCESS,
+    // UPDATE_PROGRESS_ERROR
 } from '../actions/response';
 
 const initialState = {
     response: '',
     loading: false,
     error: null,
-    view: ''
+    view: '',
+    numCorrect: 0,
+    totalQuest: 0
 }
 
 export default function responseReducer(state = initialState, action){
@@ -38,5 +43,22 @@ export default function responseReducer(state = initialState, action){
             loading: false
         })
     }
+    // else if(action.type === UPDATE_PROGRESS_REQUEST) {
+    //     return Object.assign({}, state, {
+    //         loading: action.loading,
+    //         error: action.error
+    //     })
+    // }
+    // else if (action.type === UPDATE_PROGRESS_SUCCESS) {
+    //     return Object.assign({}, state, {
+    //         response: action.response
+    //     })
+    // }
+    // else if(action.type === UPDATE_PROGRESSE_ERROR_ERROR) {
+    //     return Object.assign({}, state, {
+    //         error: action.error,
+    //         loading: false
+    //     })
+    // }
     return state;
 }

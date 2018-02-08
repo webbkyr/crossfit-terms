@@ -26,13 +26,31 @@ export const updateNewResponse = (userResponse) => ({
     error: null
 })
 
+// export const UPDATE_PROGRESS_REQUEST = 'UPDATE_PROGRESS_REQUEST';
+// export const updateProgressRequest = () => ({
+//     type: UPDATE_PROGRESS_REQUEST  
+// })
+
+// export const UPDATE_PROGRESS_SUCCESS = 'UPDATE_PROGRESS_SUCCESS';
+// export const updateProgressRequest = () => ({
+//     type: UPDATE_PROGRESS_SUCCESS,
+//     answer
+// })
+
+// export const UPDATE_PROGRESS_ERROR = 'UPDATE_PROGRESS_ERROR';
+// export const updateProgressError = () => ({
+//     type: UPDATE_PROGRESS_ERROR,
+// })
+
 export const addResponse = (response) => (dispatch, getState) => {
     dispatch(updateNewResponse(response));
     dispatch(addResponseRequest());
-    const authToken = getState().auth.authToken;
-    const uid = getState().auth.currentUser.id;
-    const question = getState().question.currWord.question;
-    //double check endpoint when backend is complete
+    const data = getState().auth;
+    const authToken = data.authToken;
+    const uid = data.currentUser.id;
+    const question = getState().question.currWord;
+    // const corrAnswer = getState().question.answer;
+    // console.log('data: ', question);
     return fetch(`${API_BASE_URL}/users/responses`, {
         headers: { 'Authorization': `Bearer ${authToken}`, 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: `POST`,
@@ -49,9 +67,19 @@ export const addResponse = (response) => (dispatch, getState) => {
         return res.json();
     })
     .then(data => {
-        //dispatch(addResponseSuccess(data.response))
+        console.log('here');
     })
     .catch(err=> {
         dispatch(addResponseError(err))
         })
+}
+
+export const updateProgress = (response) => (dispatch, getState) => {
+    const corrAnswer = getState().question.answer;
+    if ( response.toLowerCase().trim() === corrAnswer.toLowerCase().trim()) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
 }
