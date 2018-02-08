@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {addResponse} from '../actions/response';
 import {fetchNextQuestion} from '../actions/questions';
 import {updateProgress} from '../actions/response';
+import {updateView} from '../actions/response';
 import './answer-form.css';
 
 export class AnswerForm extends React.Component {
@@ -35,10 +36,22 @@ export class AnswerForm extends React.Component {
     getNext(event) {
         event.preventDefault();
         this.props.dispatch(fetchNextQuestion());
+        this.props.dispatch(updateView());
+        document.getElementById('textInput').value = '';
     }
 
     //add form render and logic to handle the input / submission
     render() {
+        let button = null;
+        if(this.props.view === '') {
+            button = <button type="submit" name="submit" id="addResponse" className="button">
+                        Submit Answer
+                    </button>
+        } else {
+            button = <button type="submit" name="next" id="nextQuestion" className="button" onClick={e => this.getNext(e)}>
+                        Next Question
+                    </button>
+        }
 
         return (
             <form className="answer-form" onSubmit={e => this.onSubmit(e)}>
@@ -53,23 +66,21 @@ export class AnswerForm extends React.Component {
                     >
                     </textarea>
                 </div>
+
                 <div>
-                    <button type="submit" name="submit" id="addResponse" className="button">
-                        Submit Answer
-                    </button>
-                </div>
-                <div>
-                    <button type="submit" name="next" id="nextQuestion" className="button" onClick={e => this.getNext(e)}>
-                        Next Question
-                    </button>
+                    { button }
                 </div>
             </form>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    id: state.question.currWord._id
-});
+const mapStateToProps = state => {
+    console.log(state);
+    return {
+        id: state.question.currWord._id,
+        view: state.response.view
+    }
+}
 
 export default connect(mapStateToProps)(AnswerForm);
