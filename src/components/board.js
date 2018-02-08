@@ -12,7 +12,7 @@ export default function Board(){
       <Feedback />
       <Questions />
       <AnswerForm />
-
+      <Progress />
       <Link className="dashboard-link" to="/dashboard">Back to Dashboard</Link>
     </div>
   )

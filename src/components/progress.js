@@ -4,21 +4,15 @@ import './progress.css';
 import updateProgress from '../actions/response.js'
 
 export function Progress(props){
-  if (props.totalQuest === 0) {
-    return;
-  }
-
-  else {
-    return(
-        <div className="progress">
-            You have answered {props.numCorrect} out of {props.totalQuest} correctly.
-        </div>
-    );
-  }
+  return(
+      <div className="progress">
+      <p>You have answered {props.numCorrect} out of {props.totalQuest} questions correctly.</p>
+    </div>
+  );
 }
 
 const mapStateToProps = (state, props) => {
-    return {
+  return {
     numCorrect: state.response.numCorrect,
     totalQuest: state.response.totalQuest
   }

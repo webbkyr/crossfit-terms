@@ -77,9 +77,9 @@ export const addResponse = (response) => (dispatch, getState) => {
 export const updateProgress = (response) => (dispatch, getState) => {
     const corrAnswer = getState().question.answer;
     if ( response.toLowerCase().trim() === corrAnswer.toLowerCase().trim()) {
-        return 1;
+        console.log(1);
     }
     else {
-        return 0;
+        console.log(0);
     }
 }
