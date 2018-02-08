@@ -33,6 +33,14 @@ export const authError = error => ({
     error
 });
 
+export const RESET_STATE = 'RESET_STATE';
+export const resetState = (response, score, total) => ({
+    type: RESET_STATE,
+    response: '',
+    score: 0,
+    total: 0
+})
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {

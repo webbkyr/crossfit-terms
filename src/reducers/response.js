@@ -8,6 +8,8 @@ import {
     UPDATE_VIEW
 } from '../actions/response';
 
+import { RESET_STATE } from '../actions/auth';
+
 const initialState = {
     response: '',
     loading: false,
@@ -57,6 +59,13 @@ export default function responseReducer(state = initialState, action){
     else if(action.type === UPDATE_VIEW) {
         return Object.assign({}, state, {
             view: action.view
+        })
+    }
+    else if(action.type === RESET_STATE) {
+        return Object.assign({}, state, {
+            response: action.response,
+            numCorrect: action.score,
+            totalQuest: action.total
         })
     }
     return state;
