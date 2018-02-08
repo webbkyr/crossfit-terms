@@ -21,7 +21,6 @@ export class AnswerForm extends React.Component {
         const target = event.target
         if(target.name === 'textInput') {
             let res = target.value.toLowerCase().trim();
-            console.log(res);
             this.setState({
                 response: res
             })
@@ -78,7 +77,6 @@ export class AnswerForm extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         id: state.question.currWord._id,
         view: state.response.view

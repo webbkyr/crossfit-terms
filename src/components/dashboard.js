@@ -9,7 +9,7 @@ export class Dashboard extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
-        this.props.dispatch(resetState(this.props.response, this.props.score, this.props.total))
+        this.props.dispatch(resetState(this.props.response, this.props.view, this.props.score, this.props.total))
     }
 
     startExercise(event){
@@ -41,6 +41,7 @@ const mapStateToProps = state => {
         name: `${currentUser.username}`,
         protectedData: state.protectedData.data,
         response: state.response.response,
+        view: state.response.view,
         score: state.response.numCorrect,
         total: state.response.totalQuest
     };
