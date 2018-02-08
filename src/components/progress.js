@@ -5,7 +5,7 @@ import './progress.css';
 export function Progress(props){
   return(
       <div className="progress">
-      <p>You have answered <span class="score">{props.numCorrect}</span> out of <span class="score">{props.totalQuest}</span> questions correctly.</p>
+      <p>You have answered <span className="score">{props.numCorrect}</span> out of <span className="score">{props.totalQuest}</span> questions correctly.</p>
     </div>
   );
 }

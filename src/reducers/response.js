@@ -7,6 +7,8 @@ import {
     INCREMENT_TOTAL
 } from '../actions/response';
 
+import { RESET_STATE } from '../actions/auth';
+
 const initialState = {
     response: '',
     loading: false,
@@ -51,6 +53,13 @@ export default function responseReducer(state = initialState, action){
     else if(action.type === INCREMENT_TOTAL) {
         return Object.assign({}, state, {
             totalQuest: action.totalQuest
+        })
+    }
+    else if(action.type === RESET_STATE) {
+        return Object.assign({}, state, {
+            response: action.response,
+            numCorrect: action.score,
+            totalQuest: action.total
         })
     }
     return state;
