@@ -30,16 +30,17 @@ export class LoginForm extends React.Component {
                     {/* {error} */}
                     {/* <label htmlFor="username">Username | Usuario</label> */}
                     <Field
-                        component={Input}
+                        placeholder="Username | Usuario"
+                        component="input"
                         type="text"
                         name="username"
                         id="username"
                         validate={[required, nonEmpty]}
-                        placeholder="placeholder"
                     />
                     {/* <label htmlFor="password">Password | Contraseña</label> */}
                     <Field
-                        component={Input}
+                        placeholder="Password | Contraseña"
+                        component="input"
                         type="password"
                         name="password"
                         id="password"
