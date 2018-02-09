@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import './landing-page.css'
 
 import LoginForm from './login-form';
 
@@ -14,7 +15,7 @@ export function LandingPage(props) {
         <div className="home">
             <h2>Welcome to Learn Spanish App | Bienvenido a App Aprender Español</h2>
             <LoginForm />
-            <Link to="/register">Register | Registro</Link>
+            {/* <Link to="/register">Register | Registro</Link> */}
         </div>
     );
 }

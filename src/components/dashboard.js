@@ -5,6 +5,7 @@ import {fetchProtectedData} from '../actions/protected-data';
 import { Link } from 'react-router-dom';
 import {resetState} from '../actions/auth';
 import DonutChart from 'react-donut-chart';
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
 

@@ -1,9 +1,9 @@
-.feedback {
+/* .feedback {
   position: absolute;
   left: 25%;
   right: 25%;
   top: 245px;
-}
+} */
 
 
 .feedback-correct {
@@ -12,5 +12,14 @@
 
 .feedback-wrong {
   color: red;
+}
+
+.feedback-correct-2 {
+  color: #2f3640;
+}
+
+.feedback-correct-highlight {
+  color: green;
+  font-weight: bold;
 }
 

@@ -1,3 +1,11 @@
 .questions {
   text-align: center;
 }
+
+p, h4 {
+  color: #f5f6fa;
+}
+
+h4 {
+  font-size: 2em;
+}
