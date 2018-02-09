@@ -15,14 +15,14 @@ export function Feedback(props){
         isCorrect = true;
         return(
           <div className="feedback">
-            <h2 className="feedback-correct">Yes, that's correct!</h2>
+            <h2 className="feedback-correct"><i className="fas fa-trophy"></i> Yes, that's correct!</h2>
           </div>
         )
       }
       else{
         return(
           <div className="feedback">
-            <h2 className="feedback-wrong">Sorry, that's incorrect!</h2>
+            <h2 className="feedback-wrong"><i className="far fa-times-circle"></i> Sorry, that's incorrect!</h2>
             <p className="feedback-correct-2">The correct answer was <span className="feedback-correct-highlight">"{props.correctAnswer}"</span></p>
           </div>
         )

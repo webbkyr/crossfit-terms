@@ -19,7 +19,7 @@ export default function Board(){
           </div>
         </div>
         <div className="dashboard-link" >
-          <Link to="/dashboard">Back to Dashboard</Link>
+          <Link to="/dashboard"><i className="fas fa-home"></i> Back to Dashboard</Link>
         </div>
       </div>
       <Feedback />
