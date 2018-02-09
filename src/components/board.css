@@ -1,18 +1,38 @@
 .board-container {
-  background: gainsboro;
+  width: 100%;
 }
 
 .board {
+  background-color: #2f3640;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  background: gainsboro;
-  padding: 20px 25%;
+  padding-top: 5%;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.main-dash {
+  order: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%
+}
+
+.quest {
+  order: 1;
+  width: 50%;
+}
+
+.answ {
+  order: 2;
+  width: 50%;
   margin-top: 20px;
 }
 
-/* .dashboard-link {
-  position: absolute;
-  top: 350px;
-
-} */
+.dashboard-link {
+  order: 2;
+  width: 100%;
+  padding-bottom: 5%
+}

@@ -2,10 +2,15 @@
     position: absolute;
     left: 25%;
     right: 25%;
-    top: 300px;
+    top: 500px;
 }
 
 .score {
     font-weight: bold;
+    color: #c23616;
+}
+
+.parentScore {
     color: #30336b;
 }
+

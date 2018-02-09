@@ -45,11 +45,11 @@ export class AnswerForm extends React.Component {
     render() {
         let button = null;
         if(this.props.view === '') {
-            button = <button type="submit" name="submit" id="addResponse" className="button">
+            button = <button type="submit" name="submit" id="addResponse" className="answerButton">
                         Submit Answer
                     </button>
         } else {
-            button = <button type="submit" name="next" id="nextQuestion" className="button" onClick={e => this.getNext(e)}>
+            button = <button type="submit" name="next" id="nextQuestion" className="answerButton" onClick={e => this.getNext(e)}>
                         Next Question
                     </button>
         }
