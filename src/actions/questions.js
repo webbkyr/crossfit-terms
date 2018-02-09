@@ -66,7 +66,7 @@ export const fetchNextQuestion = () => (dispatch, getState) => {
     return res.json();
   })
   .then( nextWord => {
-    console.log('nextWord',nextWord);
+    //console.log('nextWord',nextWord);
     dispatch(fetchQuestionSuccess(nextWord));
   })
   .catch(err => {

@@ -18,7 +18,27 @@ export class Dashboard extends React.Component {
         console.log('start exercise -- dispatch fetch questions');
     }
 
+    getChartData(data){
+        const chartData = data.map(item => {
+            if(item.attempts === 0) {
+                return {
+                    value: 0/data.length, 
+                    label: item.word   
+                }
+            }
+            else {
+                return {
+                    value: (item.correctCount/item.attempts*100), 
+                    label: item.word
+                }
+            }
+        })
+        return chartData;
+    }
+
     render() {
+        //{console.log(this.props)};
+        //{console.log(this.getChartData(this.props.protectedData))};
         return (
             <div className="dashboard">
                 <h3 className="dashboard-username">
@@ -27,18 +47,7 @@ export class Dashboard extends React.Component {
                 <p>Your Progess To-Date</p>
                 <DonutChart 
                     data={
-                        [
-                            {value: 10, label: "Cerveza"  },
-                            {value: 10, label: "Izquierda"  },
-                            {value: 10, label: "Esquina"  },
-                            {value: 10, label: "Buenos dias"  },
-                            {value: 10, label: "Buenas noches"  },
-                            {value: 10, label: "Gracias"  },
-                            {value: 10, label: "Hola"  },
-                            {value: 10, label: "Derecha"  },
-                            {value: 10, label: "Ensalada"  },
-                            {value: 10, label: "Bebida"  }
-                        ]
+                        this.getChartData(this.props.protectedData)
                     }
                     colors={
                         [
@@ -68,7 +77,7 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
-    console.log(state);
+    //console.log(state);
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.username}`,
