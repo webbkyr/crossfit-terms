@@ -14,3 +14,12 @@
   color: red;
 }
 
+.feedback-correct-2 {
+  color: #2f3640;
+}
+
+.feedback-correct-highlight {
+  color: green;
+  font-weight: bold;
+}
+

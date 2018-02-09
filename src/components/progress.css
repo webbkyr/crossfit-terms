@@ -1,8 +1,12 @@
+.feedback-correct, .feedback-wrong {
+    font-size: 2em;
+}
+
 .progress {
     position: absolute;
     left: 25%;
     right: 25%;
-    top: 500px;
+    top: 550px;
 }
 
 .score {
@@ -11,6 +15,6 @@
 }
 
 .parentScore {
-    color: #30336b;
+    color: #2f3640;
 }
 
