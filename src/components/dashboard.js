@@ -29,7 +29,7 @@ export class Dashboard extends React.Component {
             }
             else {
                 return {
-                    value: (item.correctCount/item.attempts*100), 
+                    value: Math.round(item.correctCount/item.attempts*100), 
                     label: item.word
                 }
             }
@@ -47,6 +47,8 @@ export class Dashboard extends React.Component {
                 </h3>
                 <p>Your Progess To-Date</p>
                 <DonutChart 
+                    className='chart-innertext'
+                    formatValues={values => `${(values).toFixed(2)}%`}
                     data={
                         this.getChartData(this.props.protectedData)
                     }
@@ -60,7 +62,7 @@ export class Dashboard extends React.Component {
                             '#e84118',
                             '#7f8fa6',
                             '#273c75',
-                            '#353b48',
+                            '#fffff0',
                             '#e67e22'
                         ]
                     }
@@ -69,8 +71,9 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div> */}
-                
-                <Link className="board-link" to="/board">Get Started!</Link>
+                <div className="board-link">
+                    <Link to="/board">Get Started!</Link>
+                </div>
             </div>
         );
     }
