@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import { Link } from 'react-router-dom';
 import {resetState} from '../actions/auth';
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
 
