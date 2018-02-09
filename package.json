@@ -6,9 +6,11 @@
     "react-scripts": "1.0.17"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "jwt-decode": "^2.2.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-donut-chart": "^1.1.5",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",

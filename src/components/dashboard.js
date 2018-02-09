@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import { Link } from 'react-router-dom';
 import {resetState} from '../actions/auth';
+import DonutChart from 'react-donut-chart';
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -18,18 +19,61 @@ export class Dashboard extends React.Component {
         console.log('start exercise -- dispatch fetch questions');
     }
 
+    getChartData(data){
+        const chartData = data.map(item => {
+            if(item.attempts === 0) {
+                return {
+                    value: 0/data.length, 
+                    label: item.word   
+                }
+            }
+            else {
+                return {
+                    value: Math.round(item.correctCount/item.attempts*100), 
+                    label: item.word
+                }
+            }
+        })
+        return chartData;
+    }
+
     render() {
+        //{console.log(this.props)};
+        //{console.log(this.getChartData(this.props.protectedData))};
         return (
             <div className="dashboard">
-                <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
+                <h3 className="dashboard-username">
+                    Welcome, {this.props.username}
+                </h3>
+                <p>Your Progess To-Date</p>
+                <DonutChart 
+                    className='chart-innertext'
+                    formatValues={values => `${(values).toFixed(2)}%`}
+                    data={
+                        this.getChartData(this.props.protectedData)
+                    }
+                    colors={
+                        [
+                            '#00a8ff',
+                            '#9c88ff',
+                            '#fbc531',
+                            '#4cd137',
+                            '#487eb0',
+                            '#e84118',
+                            '#7f8fa6',
+                            '#273c75',
+                            '#fffff0',
+                            '#e67e22'
+                        ]
+                    }
+                />
+                {/* <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
+                </div> */}
+                <div className="board-link">
+                    <Link to="/board">Get Started!</Link>
                 </div>
-                
-                <Link className="board-link" to="/board">Get Started!</Link>
             </div>
         );
     }
@@ -37,6 +81,7 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
+    //console.log(state);
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.username}`,
