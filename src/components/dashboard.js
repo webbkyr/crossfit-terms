@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import { Link } from 'react-router-dom';
 import {resetState} from '../actions/auth';
+import DonutChart from 'react-donut-chart';
 
 export class Dashboard extends React.Component {
 
@@ -20,13 +21,44 @@ export class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboard">
-                <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
+                <h3 className="dashboard-username">
+                    Welcome, {this.props.username}
+                </h3>
+                <p>Your Progess To-Date</p>
+                <DonutChart 
+                    data={
+                        [
+                            {value: 10, label: "Cerveza"  },
+                            {value: 10, label: "Izquierda"  },
+                            {value: 10, label: "Esquina"  },
+                            {value: 10, label: "Buenos dias"  },
+                            {value: 10, label: "Buenas noches"  },
+                            {value: 10, label: "Gracias"  },
+                            {value: 10, label: "Hola"  },
+                            {value: 10, label: "Derecha"  },
+                            {value: 10, label: "Ensalada"  },
+                            {value: 10, label: "Bebida"  }
+                        ]
+                    }
+                    colors={
+                        [
+                            '#00a8ff',
+                            '#9c88ff',
+                            '#fbc531',
+                            '#4cd137',
+                            '#487eb0',
+                            '#e84118',
+                            '#7f8fa6',
+                            '#273c75',
+                            '#353b48',
+                            '#e67e22'
+                        ]
+                    }
+                />
+                {/* <div className="dashboard-name">Name: {this.props.name}</div>
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
-                </div>
+                </div> */}
                 
                 <Link className="board-link" to="/board">Get Started!</Link>
             </div>
@@ -36,6 +68,7 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
+    console.log(state);
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.username}`,
