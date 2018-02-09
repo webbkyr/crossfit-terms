@@ -13,7 +13,7 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <h2>Welcome to Learn Spanish App | Bienvenido a App Aprender Español</h2>
+            <h2>Welcome | Bienvenido</h2>
             <LoginForm />
             {/* <Link to="/register">Register | Registro</Link> */}
         </div>

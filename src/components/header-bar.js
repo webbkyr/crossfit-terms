@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import { Redirect } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import './header-bar.css'
 
 export class HeaderBar extends React.Component {
@@ -18,9 +18,6 @@ export class HeaderBar extends React.Component {
             logOutButton = (
                 <button className="logout-button" onClick={() => this.logOut()}>Log Out</button>
             );
-        }
-        if (!this.props.loggedIn) {
-            return <Redirect to='/' />;
         }
 
         return (

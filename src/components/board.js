@@ -1,12 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Questions from './questions';
 import AnswerForm from './answer-form';
 import Feedback from './feedback';
 import Progress from './progress';
 import './board.css';
+import {connect} from 'react-redux';
 
-export default function Board(){
+export function Board(props){
+  if (!props.loggedIn) {
+    return <Redirect to='/' />;
+  }
   return(
     <div className="board-container">
       <div className="board">
@@ -27,3 +31,9 @@ export default function Board(){
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Board);
