@@ -8,7 +8,7 @@ import './board.css';
 
 export default function Board(){
   return(
-    <div>
+    <div className="board-container">
       <div className="board">
         <Questions />
         <AnswerForm />
