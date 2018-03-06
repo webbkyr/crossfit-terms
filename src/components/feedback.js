@@ -9,7 +9,7 @@ export function Feedback(props){
       return null;
     }
     else {
-      let isCorrect = false;
+      let isCorrect;
       
       if(props.correctAnswer.toLowerCase().trim() === props.userAnswer.toLowerCase().trim()){
         isCorrect = true;

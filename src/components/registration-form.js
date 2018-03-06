@@ -33,7 +33,7 @@ export class RegistrationForm extends React.Component {
                     <Field component={Input} type="text" name="lastName" /> */}
                     {/* <label htmlFor="username">Username | Usuario</label> */}
                     <Field
-                        placeholder="Username | Usuario"
+                        placeholder="Username"
                         component="input"
                         type="text"
                         name="username"
@@ -41,7 +41,7 @@ export class RegistrationForm extends React.Component {
                     />
                     {/* <label htmlFor="password">Password | Contraseña</label> */}
                     <Field
-                        placeholder="Password | Contraseña"
+                        placeholder="Password"
                         component="Input"
                         type="password"
                         name="password"
@@ -50,7 +50,7 @@ export class RegistrationForm extends React.Component {
                     {/* <label htmlFor="passwordConfirm">Confirm password | Confirmar contraseña</label> */}
                     <Field
                         component="Input"
-                        placeholder="Confirm password | Confirmar"
+                        placeholder="Confirm password"
                         type="password"
                         name="passwordConfirm"
                         validate={[required, nonEmpty, matchesPassword]}
@@ -58,7 +58,7 @@ export class RegistrationForm extends React.Component {
                     <button className="register-button"
                         type="submit"
                         disabled={this.props.pristine || this.props.submitting}>
-                        Register | Registro
+                        Register
                     </button>
                 </form>
                 <Link to="/">Login</Link>

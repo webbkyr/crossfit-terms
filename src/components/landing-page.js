@@ -13,9 +13,8 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <h2>Welcome | Bienvenido</h2>
+            <h2>Let's get started!</h2>
             <LoginForm />
-            {/* <Link to="/register">Register | Registro</Link> */}
         </div>
     );
 }

@@ -22,7 +22,7 @@ export class HeaderBar extends React.Component {
 
         return (
             <div className="header-bar">
-                <h1>Learn Spanish App | Aprender Español App</h1>
+                <h1>Learn CrossFit Terminology</h1>
                 {logOutButton}
             </div>
         );

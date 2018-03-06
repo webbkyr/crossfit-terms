@@ -30,7 +30,7 @@ export class LoginForm extends React.Component {
                     {/* {error} */}
                     {/* <label htmlFor="username">Username | Usuario</label> */}
                     <Field
-                        placeholder="Username | Usuario"
+                        placeholder="Username"
                         component="input"
                         type="text"
                         name="username"
@@ -39,7 +39,7 @@ export class LoginForm extends React.Component {
                     />
                     {/* <label htmlFor="password">Password | Contraseña</label> */}
                     <Field
-                        placeholder="Password | Contraseña"
+                        placeholder="Password"
                         component="input"
                         type="password"
                         name="password"
@@ -47,10 +47,10 @@ export class LoginForm extends React.Component {
                         validate={[required, nonEmpty]}
                     />
                     <button className="login-button" disabled={this.props.pristine || this.props.submitting}>
-                    <i className="fas fa-key"></i> Log in | Iniciar sesión
+                    <i className="fas fa-key"></i> Log in
                     </button>
                 </form>
-                <Link to="/register">Register | Registro</Link>
+                <Link to="/register">Don't have an account? Sign up</Link>
             </div>
         );
     }
