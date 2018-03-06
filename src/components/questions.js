@@ -12,7 +12,7 @@ export class Questions extends React.Component{
   render(){
     return(
       <div className="questions">
-        <p>Type the English translation to the right</p>
+        <p>Type the CrossFit acronymn to the right</p>
         <h4>{this.props.question}</h4>
       </div>
     );
