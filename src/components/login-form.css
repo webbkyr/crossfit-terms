@@ -14,7 +14,7 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 
-#username, #password {
+#username, #password, #passwordConfirm {
     font-size: 14px;
     width: 200px;
     text-align: center;
