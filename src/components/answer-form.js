@@ -57,15 +57,15 @@ export class AnswerForm extends React.Component {
         return (
             <form className="answer-form" onSubmit={e => this.onSubmit(e)}>
                 <div>
-                    <textarea
+                    <input
                     onChange={this.handleInputChange}
                     name="textInput"
                     id="textInput"
-                    className="textArea"
+                    className="answer-input"
                     required
                     ref={(input) => {this.textInput = input}}
                     >
-                    </textarea>
+                    </input>
                 </div>
 
                 <div>
