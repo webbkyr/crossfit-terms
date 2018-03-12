@@ -2,14 +2,14 @@
     <img width='600' height='450'src='https://imgur.com/a/6p7hY'>	
 </p>
 
-## purpose
+## PURPOSE
 
 New to the Crossfit community? Confused by all the lingo and acronym? Use the app to learn the most common phrases. We use a queue data structure to move each answered question to the back of the list. Play as long as you want to master the lingo.
 
 [Demo](#)
 
 
-## tech stack
+## TECHOLOGIES
 * React via [Create React App](https://github.com/facebookincubator/create-react-app)
 * Redux
 * NodeJS/Express 
@@ -25,7 +25,7 @@ TODO:
 * Use a memory strength value, rather than a Queue, to move the answered questions in the stack
 * Functionality to add more questions
 
-## client side folder structure
+## CLIENT SIDE FOLDER STRUCTURE
 
     my-app/
       README.md
@@ -44,7 +44,7 @@ TODO:
       validators.js
       local-storage.js
 
-## server side folder structure
+## SERVER SIDE FOLDER STRUCTURE
 
 [Link to the server code](https://github.com/webbkyr/crossfit-terms-server)
 
@@ -69,7 +69,7 @@ TODO:
         models.js
         router.js
 
-## want to contribute?
+## CONTRIBUTE?
 
 Install Node and npm, clone/fork the repo and run the following command in your project folder to install the dependencies
     
