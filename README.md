@@ -8,6 +8,13 @@ New to the Crossfit community? Confused by all the lingo and acronym? Use the ap
 
 [Demo](#)
 
+```
+Demo Account Login Information
+login: demoaccount
+password: demoaccount
+
+```
+
 
 ## TECHOLOGIES
 * React via [Create React App](https://github.com/facebookincubator/create-react-app)
