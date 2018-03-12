@@ -20,10 +20,11 @@ export class Dashboard extends React.Component {
     }
 
     getChartData(data){
+        console.log('DATA', data)
         const chartData = data.map(item => {
             if(item.attempts === 0) {
                 return {
-                    value: 0/data.length, 
+                    value: 0, 
                     label: item.word   
                 }
             }
@@ -38,8 +39,6 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        //{console.log(this.props)};
-        //{console.log(this.getChartData(this.props.protectedData))};
         return (
             <div className="dashboard">
                 <h3 className="dashboard-username">
