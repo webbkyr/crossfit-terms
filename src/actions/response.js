@@ -13,8 +13,10 @@ export const addResponseSuccess = (id, response) => ({
 });
 
 export const ADD_RESPONSE_ERROR = 'ADD_RESPONSE_ERROR';
-export const addResponseError = () => ({
-    type: ADD_RESPONSE_ERROR
+export const addResponseError = err => ({
+    type: ADD_RESPONSE_ERROR,
+    err
+
 })
 
 export const UPDATE_NEW_RESPONSE = 'UPDATE_NEW_RESPONSE';
@@ -62,24 +64,28 @@ export const addResponse = (response) => (dispatch, getState) => {
         })
     })
     .then(res => {
+        console.log(res)
         if(!res.ok) {
             throw new Error(res.statusTest)
         }
-        return res.json();
+    //     return res.json();
+    // })
+    // .then(data => {
+    //     console.log('here');
     })
-    .then(data => {
-        console.log('here');
-    })
-    .catch(err=> {
+    .catch(err => {
+        console.log('err being dispatched', err);
         dispatch(addResponseError(err))
         })
 }
 
-export const updateProgress = (response) => (dispatch, getState) => {
+export const updateProgress = response => (dispatch, getState) => 
+{
     const corrAnswer = getState().question.answer;
     const numCorrect = getState().response.numCorrect;
     const totalQuest = getState().response.totalQuest;
-    if ( response === corrAnswer) {
+
+    if ( response === corrAnswer.toLowerCase()) {
         dispatch(incrementScore(numCorrect, totalQuest));
     }
     else {

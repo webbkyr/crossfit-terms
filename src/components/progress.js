@@ -10,7 +10,7 @@ export function Progress(props){
   );
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = state => {
   return {
     numCorrect: state.response.numCorrect,
     totalQuest: state.response.totalQuest

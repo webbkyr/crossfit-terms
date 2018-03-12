@@ -41,7 +41,7 @@ export default function responseReducer(state = initialState, action){
     }
     else if(action.type === ADD_RESPONSE_ERROR) {
         return Object.assign({}, state, {
-            error: action.error,
+            error: action.err,
             loading: false
         })
     }

@@ -20,7 +20,6 @@ export class Dashboard extends React.Component {
     }
 
     getChartData(data){
-        console.log('DATA', data)
         const chartData = data.map(item => {
             if(item.attempts === 0) {
                 return {
