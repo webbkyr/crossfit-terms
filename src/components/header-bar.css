@@ -6,9 +6,10 @@ h1 {
 .logout-button {
     border: 0px;
     border-radius: 5px;
-    background-color:#c23616;
+    background-color:#EA7659;
+    width: 100px;
     color: #f5f6fa;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: 5px;
-    height: 2em;
+    height: 30px;
   }

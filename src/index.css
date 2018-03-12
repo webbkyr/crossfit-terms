@@ -1,6 +1,51 @@
+/*
+*** Global Styles *** 
+*/
 body {
   margin: 0;
   padding: 0;
   background-color: #FCF9F4;
   font-family: sans-serif;
+}
+
+input {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+  font-size: 14px;
+  width: 200px;
+  text-align: center;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: #FCF9F4;
+  height: 30px;
+  margin-top: 15px;
+  color: #EA7659;
+}
+
+a {
+  margin-top: 15px;
+  color: #f5f6fa;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 15px;
+  height: 40px;
+  width: 75%;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+  transition: 0.4s;
+  background-color:#EA7659;
+  color: #FCF9F4;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  box-shadow: 0 4px 8px 0 black;
+
 }
