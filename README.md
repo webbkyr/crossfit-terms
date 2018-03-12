@@ -4,7 +4,7 @@
 
 ## PURPOSE
 
-New to the Crossfit community? Confused by all the lingo and acronym? Use the app to learn the most common phrases. We use a queue data structure to move each answered question to the back of the list. Play as long as you want to master the lingo.
+New to the Crossfit community? Confused by all the lingo and acronyms? Use the app to learn the most common phrases. We use a queue data structure to move each answered question to the back of the list. Play as long as you want to master the lingo.
 
 [Demo](#)
 
@@ -12,7 +12,6 @@ New to the Crossfit community? Confused by all the lingo and acronym? Use the ap
 Demo Account Login Information
 login: demoaccount
 password: demoaccount
-
 ```
 
 
@@ -25,7 +24,7 @@ password: demoaccount
 
 ## API
 
-* [Backend](https://github.com/webbkyr/QuickConcert-Server)
+* [Backend](https://github.com/webbkyr/crossfit-terms-server)
 
 TODO: 
 
