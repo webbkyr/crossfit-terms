@@ -8,10 +8,11 @@
     border-radius: 5px;
 }
 
-a:-webkit-any-link {
+a {
     margin-top: 15px;
     color: #f5f6fa;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #username, #password, #passwordConfirm {

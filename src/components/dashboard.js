@@ -66,10 +66,6 @@ export class Dashboard extends React.Component {
                         ]
                     }
                 />
-                {/* <div className="dashboard-name">Name: {this.props.name}</div>
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
-                </div> */}
                 <div className="board-link">
                     <Link to="/board">Get Started!</Link>
                 </div>

@@ -8,14 +8,16 @@
     border-radius: 5px;
 }
 
-a:-webkit-any-link {
+/* a:-webkit-any-link {
     margin-top: 15px;
     color: #f5f6fa;
     text-decoration: none;
-}
+} */
 
 input {
     box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+
     font-size: 14px;
     width: 200px;
     text-align: center;
@@ -44,4 +46,5 @@ input {
 
 .register-button:hover {
     box-shadow: 0 4px 8px 0 black;
+    -moz-box-shadow: 0 4px 8px 0 black;
 }
