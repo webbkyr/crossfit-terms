@@ -42,7 +42,6 @@ export const fetchQuestions = () => (dispatch, getState) => {
     return res.json();
   })
   .then( currWord => {
-    console.log('currWord',currWord);
     dispatch(fetchQuestionSuccess(currWord));
   })
   .catch(err => {
@@ -66,7 +65,6 @@ export const fetchNextQuestion = () => (dispatch, getState) => {
     return res.json();
   })
   .then( nextWord => {
-    //console.log('nextWord',nextWord);
     dispatch(fetchQuestionSuccess(nextWord));
   })
   .catch(err => {

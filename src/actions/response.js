@@ -53,7 +53,6 @@ export const addResponse = (response) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const uid = getState().auth.currentUser.id;
     const question = getState().question.currWord.question;
-    //double check endpoint when backend is complete
     return fetch(`${API_BASE_URL}/responses`, {
         headers: { 'Authorization': `Bearer ${authToken}`, 'Accept': 'application/json', 'Content-Type': 'application/json' },
         method: `POST`,
@@ -68,13 +67,8 @@ export const addResponse = (response) => (dispatch, getState) => {
         if(!res.ok) {
             throw new Error(res.statusTest)
         }
-    //     return res.json();
-    // })
-    // .then(data => {
-    //     console.log('here');
     })
     .catch(err => {
-        console.log('err being dispatched', err);
         dispatch(addResponseError(err))
         })
 }
