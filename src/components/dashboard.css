@@ -13,9 +13,11 @@
     line-height: 1.8;
 }
 
-a:-webkit-any-link {
+.board-link > a {
     text-decoration: none;
     font-weight: bold;
+    color: #EA7659;
+
 }
 
 .user-stats {

@@ -16,11 +16,9 @@ export class Dashboard extends React.Component {
     }
 
     getStats(data){
-        console.log('data', data)
         const stats = data.map((item, index) => {
-            return <li className='data-word' key={index}>{item.word} : {Math.floor(item.correctCount/item.attempts*100)}%</li>
+            return <li className='data-word' key={index}>{item.word}</li>
         })
-        console.log('stats DATA', stats)
         return <ul className='user-stats'>{stats}</ul>;
     }
 
@@ -30,9 +28,8 @@ export class Dashboard extends React.Component {
                 <h2 className="dashboard-username">
                     Welcome, {this.props.username}
                 </h2>
-                {/* <p>Your Progess To-Date</p>
-                <p>Word/Phrase | Percentage Correct</p> */}
-                <p>We're here to get you up to speed on CrossFit Lingo, and if you're already an experienced Crossfitter, a bit of a refresher doesn't hurt. See <a href='https://journal.crossfit.com/' target='_blank'>here</a> for some more advanced resources via the CrossFit Journal. </p>
+                <p>We're here to get you up to speed on CrossFit Lingo, and if you're already an experienced Crossfitter, a bit of a refresher doesn't hurt. See <a href='https://journal.crossfit.com/' target='_blank' rel='noopener noreferrer'>here</a> for some more advanced resources via the CrossFit Journal. </p>
+                <h3>Phrase List</h3>
                 {this.getStats(this.props.protectedData)}
                 <div className="board-link">
                     <Link to="/board">Get Started!</Link>
