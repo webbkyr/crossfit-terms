@@ -12,9 +12,8 @@ export class LoginForm extends React.Component {
     }
 
     render() {
-        let error;
         if (this.props.error) {
-            error = (
+            return (
                 <div className="form-error" aria-live="polite">
                     {this.props.error}
                 </div>
@@ -27,8 +26,6 @@ export class LoginForm extends React.Component {
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
                     )}>
-                    {/* {error} */}
-                    {/* <label htmlFor="username">Username | Usuario</label> */}
                     <Field
                         placeholder="Username"
                         component="input"
@@ -37,7 +34,6 @@ export class LoginForm extends React.Component {
                         id="username"
                         validate={[required, nonEmpty]}
                     />
-                    {/* <label htmlFor="password">Password | Contraseña</label> */}
                     <Field
                         placeholder="Password"
                         component="input"

@@ -5,7 +5,7 @@ import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import './registration-form.css';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const passwordLength = length({min: 5, max: 72});
 const matchesPassword = matches('password');
