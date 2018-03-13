@@ -6,7 +6,7 @@
 
 New to the Crossfit community? Confused by all the lingo and acronyms? Use the app to learn the most common phrases. We use a queue data structure to move each answered question to the back of the list. Play as long as you want to master the lingo.
 
-[Demo](#)
+[Demo](https://crossfitlingo.netlify.com)
 
 ```
 Demo Account Login Information
