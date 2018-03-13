@@ -4,8 +4,13 @@
     width: auto;
     margin-left: auto;
     margin-right: auto;
-    padding: 50px;
+    padding: 40px;
     border-radius: 5px;
+}
+
+.dashboard > p {
+    color: #EA7659;
+    line-height: 1.8;
 }
 
 a:-webkit-any-link {
@@ -13,11 +18,12 @@ a:-webkit-any-link {
     font-weight: bold;
 }
 
-text.chart-innertext-innertext-label,
-text.chart-innertext-innertext-value,
-.chart-innertext-legend,
-.chart-innertext-legend-item-label {
-    fill: #f5f6fa !important;
+.user-stats {
+    padding: 0;
+}
+.data-word {
+    list-style-type: none;
+    line-height: 1.8;
 }
 
 .board-link {

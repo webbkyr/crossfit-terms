@@ -4,7 +4,8 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import { Link } from 'react-router-dom';
 import {resetState} from '../actions/auth';
-import DonutChart from 'react-donut-chart';
+// import DonutChart from 'react-donut-chart';
+// import { VictoryPie } from 'victory'
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -14,57 +15,25 @@ export class Dashboard extends React.Component {
         this.props.dispatch(resetState(this.props.response, this.props.view, this.props.score, this.props.total))
     }
 
-    startExercise(event){
-        event.preventDefault();
-        console.log('start exercise -- dispatch fetch questions');
-    }
-
-    getChartData(data){
-        const chartData = data.map(item => {
-            if(item.attempts === 0) {
-                return {
-                    value: 0, 
-                    label: item.word   
-                }
-            }
-            else {
-                return {
-                    value: Math.round(item.correctCount/item.attempts*100), 
-                    label: item.word
-                }
-            }
+    getStats(data){
+        console.log('data', data)
+        const stats = data.map((item, index) => {
+            return <li className='data-word' key={index}>{item.word} : {Math.floor(item.correctCount/item.attempts*100)}%</li>
         })
-        return chartData;
+        console.log('stats DATA', stats)
+        return <ul className='user-stats'>{stats}</ul>;
     }
 
     render() {
         return (
             <div className="dashboard">
-                <h3 className="dashboard-username">
+                <h2 className="dashboard-username">
                     Welcome, {this.props.username}
-                </h3>
-                <p>Your Progess To-Date</p>
-                <DonutChart 
-                    className='chart-innertext'
-                    formatValues={values => `${(values).toFixed(2)}%`}
-                    data={
-                        this.getChartData(this.props.protectedData)
-                    }
-                    colors={
-                        [
-                            '#00a8ff',
-                            '#9c88ff',
-                            '#fbc531',
-                            '#4cd137',
-                            '#487eb0',
-                            '#e84118',
-                            '#7f8fa6',
-                            '#273c75',
-                            '#fffff0',
-                            '#e67e22'
-                        ]
-                    }
-                />
+                </h2>
+                {/* <p>Your Progess To-Date</p>
+                <p>Word/Phrase | Percentage Correct</p> */}
+                <p>We're here to get you up to speed on CrossFit Lingo, and if you're already an experienced Crossfitter, a bit of a refresher doesn't hurt. See <a href='https://journal.crossfit.com/' target='_blank'>here</a> for some more advanced resources via the CrossFit Journal. </p>
+                {this.getStats(this.props.protectedData)}
                 <div className="board-link">
                     <Link to="/board">Get Started!</Link>
                 </div>
@@ -75,7 +44,6 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
-    //console.log(state);
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.username}`,
